@@ -1,5 +1,6 @@
 const { Router } = require('express');
 const routes = Router();
+const cors = require('cors');
 
 const multer = require('multer'); //Upload
 const multerConfig = require('./config/multer'); //Upload
@@ -82,6 +83,9 @@ const ProntuarioController = require('./controllers/ProntuarioController');
 //   return res.json(pront);
 
 // });
+
+
+
 
 routes.get('/prontuarios', UserController.index);
 routes.post('/users', UserController.store);
