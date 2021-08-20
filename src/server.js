@@ -11,8 +11,6 @@ app.use(express.json());
 
 app.use((req, res, next) => {
   req.header("Access-Control-Allow-Origin", "*");
-  req.header("Access-Control-Allow-Methods", 'GET, POST, PUT');
-  req.header("Access-Control-Allow-Headers", "*")
   app.use(cors());
   console.log('middleware')
   next();
