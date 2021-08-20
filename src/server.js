@@ -8,14 +8,15 @@ const routes = require('./routes');
 // const app = express();
 require('dotenv/config');
 app.use(express.json());
+app.use(cors());
 
-app.use((req, res, next) => {
-  req.header("Access-Control-Allow-Origin", "*");
-  app.use(cors());
-  console.log('middleware')
-  next();
+// app.use((req, res, next) => {
+//   req.header("Access-Control-Allow-Origin", "*");
+//   app.use(cors());
+//   console.log('middleware')
+//   next();
 
-});
+// });
 
 mongoose.connect(
   `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@dbprojetos.zgeh8.mongodb.net/${process.env.DB_DATABASE}?retryWrites=true&w=majority`,
