@@ -9,6 +9,8 @@ const Prontuario = require('./models/Prontuario');
 
 const UserController = require('./controllers/UserController');
 const ProntuarioController = require('./controllers/ProntuarioController');
+const SearchController = require('./controllers/SearchController');
+
 
 // routes.post('/', multer(multerConfig).single("file"), async (req, res) => {
 //   // try { 
@@ -88,6 +90,7 @@ const ProntuarioController = require('./controllers/ProntuarioController');
 
 
 routes.get('/prontuarios', UserController.index);
+routes.get('/prontuarios/:search', SearchController.index);
 routes.post('/users', UserController.store);
 routes.get('/editar/prontuario/:_id', ProntuarioController.index);
 routes.get('/vizualizar/prontuario/:_id', ProntuarioController.index);
